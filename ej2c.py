@@ -23,8 +23,9 @@ def plot_bar_chart(x_labels, data_dict, errors_dict, xlabel, title):
     plt.ylabel("Probabilidad de Captura (%)")
     plt.xlabel(xlabel)
     plt.title(title)
-    plt.legend()
+    plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
     plt.grid(axis='y', linestyle='--', alpha=0.5)
+    plt.tight_layout()
     plt.show()
 
 
