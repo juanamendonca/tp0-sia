@@ -8,7 +8,7 @@ import numpy as np
 if __name__ == "__main__":
 
     factory = PokemonFactory("pokemon.json")
-    num_attempts = 10000
+
 
     with open(sys.argv[1], "r") as f:
         config = json.load(f)
@@ -18,8 +18,8 @@ if __name__ == "__main__":
     with open("pokemon.json") as f:
         pokemon_data = json.load(f)
 
+    num_attempts = 10000
     results = {}
-
     for pokemon_name in pokemons:
         pokemon = factory.create(pokemon_name, 100, StatusEffect.NONE, 1.0)
 
