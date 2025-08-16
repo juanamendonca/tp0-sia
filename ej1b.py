@@ -23,18 +23,13 @@ if __name__ == "__main__":
     for pokemon_name in pokemons:
         pokemon = factory.create(pokemon_name, 100, StatusEffect.NONE, 1.0)
 
-        # In order to calculate relative success, the base success is required
-        # So we first did this basic pokeball run to get that average
-        basic_attempts = [attempt_catch(pokemon, "pokeball")[0] for _ in range(num_attempts)]
-        basic_prob = np.mean(basic_attempts)
-
         relative = {}
         for ball_name in pokeballs:
             attempts = [attempt_catch(pokemon, ball_name)[0] for _ in range(num_attempts)]
             prob = np.mean(attempts)
-            relative_effectiveness = (prob / basic_prob) * 100 if basic_prob > 0 else 0
-            relative[ball_name] = relative_effectiveness
+            relative[ball_name] = prob
 
+        relative = {k: (v / relative["pokeball"]) * 100 for k, v in relative.items()}
         results[pokemon_name] = relative
 
     plt.figure(figsize=(10,6))
