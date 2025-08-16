@@ -44,9 +44,9 @@ if __name__ == "__main__":
         plt.plot(balls, rels, marker='o', linestyle='-', label=pokemon_name)
 
     plt.ylim(0, None)
-    plt.ylabel("Éxito relativo ( % )")
+    plt.ylabel("Éxito relativo (%)")
     plt.xlabel("Tipo de Pokebola")
-    plt.title("Efectividad relativa por Pokébola")
+    plt.title("Efectividad relativa por Pokebola")
     plt.grid(True)
     plt.legend()
     plt.show()
