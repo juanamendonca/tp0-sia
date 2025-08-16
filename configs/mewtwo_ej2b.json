@@ -1,5 +1,6 @@
 {
   "pokemon": "mewtwo",
   "pokeball": "heavyball",
-  "level": 100
+  "level": 100,
+  "noise": 0.15
 }
