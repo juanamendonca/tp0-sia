@@ -44,4 +44,5 @@ for name, data in results.items():
         plt.text(x, y, f"{y:.2f}%", ha="center", va="bottom")
 
     plt.tight_layout()
-    plt.show()
+    plt.savefig(f"graphs/ej2a_{name}.png")
+    print(f"Gráfico guardado en 'ej2a_{name}.png'")

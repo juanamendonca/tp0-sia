@@ -12,12 +12,12 @@ if __name__ == "__main__":
         config = json.load(f)
         pokemon_name = config["pokemon"]
         pokeball = config["pokeball"]
-        level = config.get("level", 50)
         noise = config.get("noise", 0)
 
     status = StatusEffect.NONE
     hp_percentages = np.linspace(0.1, 1.0, 10) 
 
+    level = 100
     sim_means = []
     err_low = []
     err_high = []
@@ -26,7 +26,6 @@ if __name__ == "__main__":
 
     for hp_pct in hp_percentages:
         pokemon = factory.create(pokemon_name, level, status, hp_pct)
-
     
         probs = [attempt_catch(pokemon, pokeball, noise)[1] * 100 for _ in range(n_simulations)]
 
@@ -58,5 +57,5 @@ if __name__ == "__main__":
     plt.legend()
     plt.tight_layout()
 
-    plt.savefig("hp_vs_captura.png")
-    print("Gráfico guardado en 'hp_vs_captura.png'")
+    plt.savefig(f"graphs/ej2b_{pokemon_name}.png")
+    print(f"Gráfico guardado en 'ej2b_{pokemon_name}.png'")

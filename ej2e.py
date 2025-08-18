@@ -55,5 +55,5 @@ for pokemon, result_data in results.items():
         plt.text(rate[4] + 1, i, f"{rate[4]:.0f}%", va="center")
 
     plt.tight_layout()
-    plt.savefig(f"ej2e_{pokemon}.png")
+    plt.savefig(f"graphs/ej2e_{pokemon}.png")
     print(f"Gráfico guardado en 'ej2e_{pokemon}.png'")

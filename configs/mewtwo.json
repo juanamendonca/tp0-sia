@@ -1,9 +1,4 @@
 {
   "pokemon": "mewtwo",
-  "pokeballs": [
-    "pokeball",
-    "ultraball",
-    "heavyball",
-    "fastball"
-  ]
+  "pokeballs": "heavyball"
 }

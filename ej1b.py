@@ -45,4 +45,5 @@ if __name__ == "__main__":
     plt.grid(True)
     plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
     plt.tight_layout()
-    plt.show()
+    plt.savefig("graphs/ej1b.png")
+    print("Gráfico guardado en 'ej1b.png'")

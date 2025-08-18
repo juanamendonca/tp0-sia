@@ -54,9 +54,9 @@ def run_for_pokemon(config_path, reps=100):
         plt.text(val + 1, i, f"{val:.1f}%", va="center")
 
     plt.tight_layout()
-    filename = f"ej2d_{pokemon_name}.png"
+    filename = f"graphs/ej2d_{pokemon_name}.png"
     plt.savefig(filename)
-    print(f"Gráfico guardado en '{filename}'")
+    print(f"Gráfico guardado en 'ej2d_{pokemon_name}.png'")
 
 if __name__ == "__main__":
     run_for_pokemon("configs/jolteon.json", reps=100)

@@ -8,7 +8,6 @@ from src.pokemon import PokemonFactory, StatusEffect
 if __name__ == "__main__":
     factory = PokemonFactory("pokemon.json")
 
-    # Cargar JSON de configuración
     with open(sys.argv[1], "r") as f:
         config = json.load(f)
         pokemons = config["pokemon"]
@@ -17,7 +16,6 @@ if __name__ == "__main__":
     print(f"{'Pokemon':<12} | {'Pokeball':<12} | {'Probabilidad (%)':<15}")
     print("-" * 45)
 
-    # Guardamos datos para graficar
     probabilities = []
 
     for pokemon_name in pokemons:
@@ -25,7 +23,6 @@ if __name__ == "__main__":
         for ball_name in pokeballs:
             pokemon = factory.create(pokemon_name, 100, StatusEffect.NONE, 1)
 
-            # Simular 100 intentos y tomar el primer elemento de la tupla
             results = [attempt_catch(pokemon, ball_name)[0] for _ in range(100)]
             prob = np.mean(results) * 100
 
@@ -55,8 +52,8 @@ if __name__ == "__main__":
     ax.set_title("Probabilidad de captura de Pokémon por Pokéball")
     ax.legend()
     plt.tight_layout()
-    plt.savefig("grafico1a_pokeballs.png")
-    print("Gráfico guardado en 'grafico1a_pokeballs.png'")
+    plt.savefig("graphs/ej1a_pokeballs.png")
+    print("Gráfico guardado en 'ej1a_pokeballs.png'")
 
     # ---------- Gráfico 2: barras agrupadas por Pokémon ----------
     x2 = np.arange(len(pokemons))
@@ -76,5 +73,5 @@ if __name__ == "__main__":
     ax2.set_title("Probabilidad de captura por Pokémon")
     ax2.legend()
     plt.tight_layout()
-    plt.savefig("grafico1a_pokemons.png")
-    print("Gráfico guardado en 'grafico1a_pokemons.png'")
+    plt.savefig("graphs/ej1a_pokemons.png")
+    print("Gráfico guardado en 'ej1a_pokemons.png'")
