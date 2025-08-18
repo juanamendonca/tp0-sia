@@ -49,10 +49,10 @@ pipenv run python ej2b.py configs/caterpie_ej2b.json
 pipenv run python ej2b.py configs/mewtwo_ej2b.json
 ```
 
-### Ejecución ejercicio del resto de ejercicios
+### Ejecución del resto de ejercicios
 
 ```
-pipenv run python ej2{letra de ejercicio}.py
+pipenv run python ej2<letra>.py
 ```
 
 Los graficos de guardan dentro de la carpeta graphs
