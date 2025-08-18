@@ -55,4 +55,4 @@ pipenv run python ej2b.py configs/mewtwo_ej2b.json
 pipenv run python ej2<letra>.py
 ```
 
-Los graficos de guardan dentro de la carpeta graphs
+Los gráficos se guardan dentro de la carpeta graphs
